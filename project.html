@@ -5,6 +5,51 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1 - Group 9</title>
+    <script>
+        function calcGPA() { //We need to make sure they have all the inputs.
+            var GPA
+            var is201grade = (parseFloat(document.getElementById("is201grade").value) * .2); //The weights?
+            var is303grade = (parseFloat(document.getElementById("is303/cs142grade").value) * .2);
+            var acc200grade = (parseFloat(document.getElementById("acc200grade").value) * (.2 / 3));
+            var fin200grade = (parseFloat(document.getElementById("fin201grade").value) * (.2 / 3));
+            var mktg201grade = (parseFloat(document.getElementById("mktg201grade").value) * (.2 / 3));
+            var overallgpa = (parseFloat(document.getElementById("overallgpa").value) * .2);
+            var last30gpa = (parseFloat(document.getElementById("last30gpa").value) * .2);
+
+            /*Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box.*/
+
+           /* NOTE: If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
+            
+            GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
+
+           
+           Math.round(GPA, 3); //this is the function he had for us... I dont know what to do with it
+            
+
+            if (GPA > 3.7) {
+                document.getElementById("myCircle").style.display = "block";
+                document.getElementById("myCircle").style.fill = "green";
+            } else if (GPA > 3.4) {
+                document.getElementById("myCircle").style.display = "block";
+                document.getElementById("myCircle").style.fill = "yellow";
+            } else {
+                document.getElementById("myCircle").style.display = "block";
+                document.getElementById("myCircle").style.fill = "red";
+            }
+
+            document.getElementById("OutPutGPA").innerHTML = GPA;
+        }
+
+        function clearCircle() 
+        {
+            document.getElementById("myCricle").style.display = "none";
+            document.getElementById("myCircle").style.fill = "none";
+        /*
+        When the page is first displayed (or loaded) or if the user clicks on the RESET button, the IS201 drop down list should have focus.
+        When the user clicks on the RESET button you should call a JavaScript function called clearCircle() and clear the circle (style.display = "none" and style.fill = "none" for the element), clear the output GPA, clear the overall GPA and the last 30 credits GPA, reset all drop downs to empty and the checkboxes to false, and then set focus to the IS202 drop down.*/
+        
+        }
+    </script>
 </head>
 
 <body onload="clearCircle()">
@@ -140,45 +185,7 @@
 
     </p>
 
-    <script>
-        function calcGPA() { //We need to make sure they have all the inputs.
-            var GPA
-            var is201grade = (parseFloat(document.getElementById("is201grade").value) * .2); //The weights?
-            var is303grade = (parseFloat(document.getElementById("is303/cs142grade").value) * .2);
-            var acc200grade = (parseFloat(document.getElementById("acc200grade").value) * (.2 / 3));
-            var fin200grade = (parseFloat(document.getElementById("fin201grade").value) * (.2 / 3));
-            var mktg201grade = (parseFloat(document.getElementById("mktg201grade").value) * (.2 / 3));
-            var overallgpa = (parseFloat(document.getElementById("overallgpa").value) * .2);
-            var last30gpa = (parseFloat(document.getElementById("last30gpa").value) * .2);
-
-            GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
-
-
-            GPA = round(GPA, 2); //this is the function he had for us... I dont know what to do with it
-            /*function round(GPA, decimals)  
-            {
-                return Number(Math.round(GPA + 'e' + decimals) + 'e-' + decimals);
-            }*/
-
-            document.getElementById("OutPutGPA").innerHTML = GPA;
-
-            if (GPA > 3.7) {
-                document.getElementById("myCircle").style.fill = "green";
-                document.getElementById("myCircle").style.display = "block";
-            } else if (GPA > 3.4) {
-                document.getElementById("myCircle").style.fill = "yellow";
-                document.getElementById("myCircle").style.display = "block";
-            } else {
-                document.getElementById("myCircle").style.fill = "red";
-                document.getElementById("myCircle").style.display = "block";
-
-            }
-        }
-
-        function clearCircle() {
-
-        }
-    </script>
+   
 </body>
 
 </html>
