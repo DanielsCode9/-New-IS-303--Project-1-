@@ -4,8 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Project 1 - Group 9</title>
+<<<<<<< Updated upstream
+    <script>
+
+
+        function calcGPA() { //We need to make sure they have all the inputs.
+            var GPA
+            var is201grade = (parseFloat(document.getElementById("is201grade").value) * .2); //The weights?
+            var is303grade = (parseFloat(document.getElementById("is303/cs142grade").value) * .2);
+            var acc200grade = (parseFloat(document.getElementById("acc200grade").value) * (.2 / 3));
+            var fin200grade = (parseFloat(document.getElementById("fin201grade").value) * (.2 / 3));
+            var mktg201grade = (parseFloat(document.getElementById("mktg201grade").value) * (.2 / 3));
+            var overallgpa = (parseFloat(document.getElementById("overallgpa").value) * .2);
+            var last30gpa = (parseFloat(document.getElementById("last30gpa").value) * .2);
+
+//Making sure the user puts in a grade
+
+            if (isNaN(parseFloat(document.getElementById("is201grade").value) * .2))
+        {
+                alert("Please enter your IS 201 Grade.")
+                return
+        }
+
+          if(isNaN(parseFloat(document.getElementById("is303/cs142grade").value) * .2))
+
+          {
+            alert("Please enter your IS 303 or CS 142 Grade.")
+                return  
+        }
+        if (isNaN(parseFloat(document.getElementById("fin201grade").value) * .2)) 
+        {
+                alert("Please enter your Finance 201 Grade.")
+                return
+        }
+
+          if(isNaN(parseFloat(document.getElementById("mktg201grade").value) * .2))
+          
+          {
+            alert("Please enter your Marketing 201 Grade.")
+                return  
+        }
+        if (isNaN(parseFloat(document.getElementById("overallgpa").value) * .2))
+        {
+                alert("Please enter your Overall GPA")
+                return
+        }
+
+
+          if(isNaN(parseFloat(document.getElementById("last30gpa").value) * .2))
+          
+          {
+            alert("Please enter your Last 30 credits GPA")
+                return  
+          }
+          
+           
+            /*Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box.*/
+
+           /* NOTE: If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
+            
+            GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
+
+        
+           Math.round(GPA, 3); //this is the function he had for us... I dont know what to do with it
+            
+
+            if (GPA > 3.7) {
+                document.getElementById("myCircle").style.display = "block";
+                document.getElementById("myCircle").style.fill = "green";
+            } else if (GPA > 3.4) {
+                document.getElementById("myCircle").style.display = "block";
+                document.getElementById("myCircle").style.fill = "yellow";
+            } else {
+                document.getElementById("myCircle").style.display = "block";
+                document.getElementById("myCircle").style.fill = "red";
+            }
+
+            document.getElementById("OutPutGPA").innerHTML = GPA;
+        }
+
+        function clearCircle() 
+        {
+            document.getElementById("myCricle").style.display = "none";
+            document.getElementById("myCircle").style.fill = "none";
+        /*
+        When the page is first displayed (or loaded) or if the user clicks on the RESET button, the IS201 drop down list should have focus.
+        When the user clicks on the RESET button you should call a JavaScript function called clearCircle() and clear the circle (style.display = "none" and style.fill = "none" for the element), clear the output GPA, clear the overall GPA and the last 30 credits GPA, reset all drop downs to empty and the checkboxes to false, and then set focus to the IS202 drop down.*/
+        
+        }
+    </script>
+>>>>>>> Stashed changes
 </head>
 <body onload="clearCircle()">
+<<<<<<< Updated upstream
  
    <label for="is201grade">IS 201</label>
    <select id="is201grade" autofocus>
@@ -59,6 +150,81 @@
     <option value = "1">D</option>
     <option value = ".7">D-</option>
     <option value = "0">E</option>
+=======
+
+    <h1>INFORMATION SYSTEMS</h1>
+    <h3>Program Overview:</h3>
+    <p> The BS Information Systems program is available as a four-year traditional degree or as a five-year integrated
+        option where students earn both the BS IS and MISM degrees. The BS IS program is a 64-credit degree including
+        pre-management, junior core, management core, and a capstone.</p>
+    <h3>Curriculum:</h3>
+    <p> Information systems students learn to define, develop, and maintain the information system infrastructure that
+        supports the operations of all businesses, governments, and other institutions. The BS Information Systems
+        degree develops the ability to function effectively as a professional, applying state-of-the-art technology in
+        solving business problems. Students are trained in business and information systems and taught to understand
+        complex business environments.</p>
+    <p> Built on a solid foundation of business courses, the curriculum advances students’ understanding of technologies
+        in the design and development of information systems. They gain technical expertise in systems analysis; systems
+        design and implementation; database development and management; programming; telecommunications networking;
+        2-tier, 3-tier, and n-tier application development; and web application development.</p>
+    <a src="https://marriottschool.byu.edu/infosys/"></a>
+
+    <label for="is201grade">IS 201</label>
+    <select id="is201grade" autofocus>
+        <option value="" selected = "selected"></option>
+        <option value="4">A</option>
+        <option value="3.7">A-</option>
+        <option value="3.4">B+</option>
+        <option value="3">B</option>
+        <option value="2.7">B-</option>
+        <option value="2.4">C+</option>
+        <option value="2">C</option>
+        <option value="1.7">C-</option>
+        <option value="1.4">D+</option>
+        <option value="1">D</option>
+        <option value=".7">D-</option>
+        <option value="0">E</option>
+    </select>
+    <input type="radio" id="retakeis201" value="is" />Retake
+
+    <br> <br>
+
+    <label for="is303/cs142grade">IS 303/CS 142</label>
+    <select id="is303/cs142grade">
+        <option value="" selected = "selected"></option>
+        <option value="4">A</option>
+        <option value="3.7">A-</option>
+        <option value="3.4">B+</option>
+        <option value="3">B</option>
+        <option value="2.7">B-</option>
+        <option value="2.4">C+</option>
+        <option value="2">C</option>
+        <option value="1.7">C-</option>
+        <option value="1.4">D+</option>
+        <option value="1">D</option>
+        <option value=".7">D-</option>
+        <option value="0">E</option>
+    </select>
+    <input type="radio" id="retakeis303/cs142" value="is/cs" />Retake
+
+    <br> <br>
+
+    <label for="acc200grade">ACC 200</label>
+    <select id="acc200grade">
+        <option value="" selected = "selected"></option>
+        <option value="4">A</option>
+        <option value="3.7">A-</option>
+        <option value="3.4">B+</option>
+        <option value="3">B</option>
+        <option value="2.7">B-</option>
+        <option value="2.4">C+</option>
+        <option value="2">C</option>
+        <option value="1.7">C-</option>
+        <option value="1.4">D+</option>
+        <option value="1">D</option>
+        <option value=".7">D-</option>
+        <option value="0">E</option>
+>>>>>>> Stashed changes
     </select>
     <input type="radio" id="retakeacc200" value="Acc"/>Retake
 
@@ -66,6 +232,7 @@
 
     <label for="fin201grade">FIN 201</label>
     <select id="fin201grade">
+<<<<<<< Updated upstream
         <option value = "4">A</option>
         <option value = "3.7">A-</option>
         <option value = "3.4">B+</option>
@@ -122,6 +289,56 @@
         function calcGPA()
         {
         var output;
+=======
+        <option value="" selected = "selected"></option>
+        <option value="4">A</option>
+        <option value="3.7">A-</option>
+        <option value="3.4">B+</option>
+        <option value="3">B</option>
+        <option value="2.7">B-</option>
+        <option value="2.4">C+</option>
+        <option value="2">C</option>
+        <option value="1.7">C-</option>
+        <option value="1.4">D+</option>
+        <option value="1">D</option>
+        <option value=".7">D-</option>
+        <option value="0">E</option>
+    </select>
+    <input type="radio" id="retakefin201" value="Fin" />Retake
+
+    <br> <br>
+
+    <label for="mktg201grade">MKTG 201</label>
+    <select id="mktg201grade">
+        
+        <option value="" selected = "selected"></option>
+        <option value="4">A</option>
+        <option value="3.7">A-</option>
+        <option value="3.4">B+</option>
+        <option value="3">B</option>
+        <option value="2.7">B-</option>
+        <option value="2.4">C+</option>
+        <option value="2">C</option>
+        <option value="1.7">C-</option>
+        <option value="1.4">D+</option>
+        <option value="1">D</option>
+        <option value=".7">D-</option>
+        <option value="0">E</option>
+    </select>
+    <input type="radio" id="retakemktg201" value="mktg" />Retake
+
+    <br> <br>
+
+    <labl for="overallgpa">BYU Overall GPA:</labl>
+    <input type="text" placeholder="4" id="overallgpa">
+    <br> <br>
+    <label for="last30gpa">BYU Last 30 Credits GPA:</label>
+    <input type="text" placeholder="4" id="last30gpa">
+    <br> <br>
+    <input type="button" value="CALCULATE" onclick="calcGPA()">
+    <br> <br>
+    <input type="button" value="RESET" onclick="clearCircle()">
+>>>>>>> Stashed changes
 
         output = parseInt(document.getElementById("is303/cs142grade")).value + "<br>";
         output = output + parseInt(document.getElementById("is201grade")).value + "<br>";
