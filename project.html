@@ -153,14 +153,25 @@
 
             GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
 
+
+            GPA = round(GPA, 2); //this is the function he had for us... I dont know what to do with it
+            /*function round(GPA, decimals)  
+            {
+                return Number(Math.round(GPA + 'e' + decimals) + 'e-' + decimals);
+            }*/
+
             document.getElementById("OutPutGPA").innerHTML = GPA;
 
             if (GPA > 3.7) {
                 document.getElementById("myCircle").style.fill = "green";
+                document.getElementById("myCircle").style.display = "block";
             } else if (GPA > 3.4) {
                 document.getElementById("myCircle").style.fill = "yellow";
+                document.getElementById("myCircle").style.display = "block";
             } else {
                 document.getElementById("myCircle").style.fill = "red";
+                document.getElementById("myCircle").style.display = "block";
+
             }
         }
 
