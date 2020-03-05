@@ -228,7 +228,71 @@
      </p>
 
     <script>
-        
+        //Jaden's script for recalculating retake GPA values
+        //IS201
+        if (document.getElementById("retakeis201").checked == true)
+        {
+            if (document.getElementById("is201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7))
+            {
+                parseInt(document.getElementById("is201grade")).value = (parseInt(document.getElementById("is201grade")).value - 0.3)
+            }
+            else if (document.getElementById("is201grade").value == (3.4 || 2.4 || 1.4))
+            {
+                parseInt(document.getElementById("is201grade")).value = (parseInt(document.getElementById("is201grade")).value - 0.4)
+            }
+        }
+        //IS303
+        if (document.getElementById("retakeis303").checked == true)
+        {
+            if (document.getElementById("is303/cs142grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7))
+            {
+                parseInt(document.getElementById("is303/cs142grade")).value = (parseInt(document.getElementById("is303/cs142grade")).value - 0.3)
+            }
+            else if (document.getElementById("is303/cs142grade").value == (3.4 || 2.4 || 1.4))
+            {
+                parseInt(document.getElementById("is303/cs142grade")).value = (parseInt(document.getElementById("is303/cs142grade")).value - 0.4)
+            }
+        }
+        //ACC200
+        if (document.getElementById("retakeacc200").checked == true)
+        {
+            if (document.getElementById("acc200grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7))
+            {
+                parseInt(document.getElementById("acc200grade")).value = (parseInt(document.getElementById("acc200grade")).value - 0.3)
+            }
+            else if (document.getElementById("acc200grade").value == (3.4 || 2.4 || 1.4))
+            {
+                parseInt(document.getElementById("acc200grade")).value = (parseInt(document.getElementById("acc200grade")).value - 0.4)
+            }
+        }
+        //FIN201
+        if (document.getElementById("retakefin201").checked == true)
+        {
+            if (document.getElementById("fin201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7))
+            {
+                parseInt(document.getElementById("fin201grade")).value = (parseInt(document.getElementById("fin201grade")).value - 0.3)
+            }
+            else if (document.getElementById("fin201grade").value == (3.4 || 2.4 || 1.4))
+            {
+                parseInt(document.getElementById("fin201grade")).value = (parseInt(document.getElementById("fin201grade")).value - 0.4)
+            }
+        }
+        //MKTG201
+        if (document.getElementById("retakemktg201").checked == true)
+        {
+            if (document.getElementById("mktg201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7))
+            {
+                parseInt(document.getElementById("mktg201grade")).value = (parseInt(document.getElementById("mktg201grade")).value - 0.3)
+            }
+            else if (document.getElementById("mktg201grade").value == (3.4 || 2.4 || 1.4))
+            {
+                parseInt(document.getElementById("mktg201grade")).value = (parseInt(document.getElementById("mktg201grade")).value - 0.4)
+            }
+        }
+
+
+
+
         function calcGPA()
         {
         var output;
