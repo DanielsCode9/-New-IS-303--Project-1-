@@ -196,7 +196,8 @@
             if (isNaN(parseFloat(document.getElementById("is201grade").value)) || isNaN(parseFloat(document.getElementById("is303/cs142grade").value)) || isNaN(parseFloat(document.getElementById("fin201grade").value)) || isNaN(parseFloat(document.getElementById("mktg201grade").value)) || (null == document.getElementById("overallgpa").value) || (null == document.getElementById("last30gpa").value)) {
                 alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
                 document.getElementById("is201grade").focus;
-            }*/
+                return;
+            }
 
             /*If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
             //Changed grade for IS201
