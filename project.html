@@ -50,70 +50,62 @@
                                 return
                             }
 
-            //or could this^^ be more efficient? 👇👇
-
-            /* Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box. AUDREY
-            if (isNaN(document.getElementById("is201grade").value) || isNaN(document.getElementById("is303/cs142grade").value) || isNaN(document.getElementById("fin201grade").value) || isNaN(ocument.getElementById("mktg201grade").value) || (null == document.getElementById("overallgpa").value) || (null == document.getElementById("last30gpa").value)) {
-                alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
-                document.getElementById("is201grade").focus;
-            }*/
-
             /*If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
             //Changed grade for IS201
 
             if (document.getElementById("retakeis201").checked == true) {
                 if (document.getElementById("is201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseInt(document.getElementById("is201grade")).value = (parseInt(document.getElementById("is201grade"))
+                    parseFloat(document.getElementById("is201grade")).value = (parseFloat(document.getElementById("is201grade"))
                         .value - 0.3)
                 } else if (document.getElementById("is201grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseInt(document.getElementById("is201grade")).value = (parseInt(document.getElementById("is201grade"))
+                    parseFloat(document.getElementById("is201grade")).value = (parseFloat(document.getElementById("is201grade"))
                         .value - 0.4)
                 }
             }
             //IS303
-            if (document.getElementById("retakeis303").checked == true) {
+            if (document.getElementById("retakeis303/cs142").checked == true) {
                 if (document.getElementById("is303/cs142grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseInt(document.getElementById("is303/cs142grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("is303/cs142grade")).value = (parseFloat(document.getElementById(
                         "is303/cs142grade")).value - 0.3)
                 } else if (document.getElementById("is303/cs142grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseInt(document.getElementById("is303/cs142grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("is303/cs142grade")).value = (parseFloat(document.getElementById(
                         "is303/cs142grade")).value - 0.4)
                 }
             }
             //ACC200
             if (document.getElementById("retakeacc200").checked == true) {
                 if (document.getElementById("acc200grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseInt(document.getElementById("acc200grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("acc200grade")).value = (parseFloat(document.getElementById(
                         "acc200grade")).value - 0.3)
                 } else if (document.getElementById("acc200grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseInt(document.getElementById("acc200grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("acc200grade")).value = (parseFloat(document.getElementById(
                         "acc200grade")).value - 0.4)
                 }
             }
             //FIN201
             if (document.getElementById("retakefin201").checked == true) {
                 if (document.getElementById("fin201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseInt(document.getElementById("fin201grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("fin201grade")).value = (parseFloat(document.getElementById(
                         "fin201grade")).value - 0.3)
                 } else if (document.getElementById("fin201grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseInt(document.getElementById("fin201grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("fin201grade")).value = (parseFloat(document.getElementById(
                         "fin201grade")).value - 0.4)
                 }
             }
             //MKTG201
             if (document.getElementById("retakemktg201").checked == true) {
                 if (document.getElementById("mktg201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseInt(document.getElementById("mktg201grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("mktg201grade")).value = (parseFloat(document.getElementById(
                         "mktg201grade")).value - 0.3)
                 } else if (document.getElementById("mktg201grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseInt(document.getElementById("mktg201grade")).value = (parseInt(document.getElementById(
+                    parseFloat(document.getElementById("mktg201grade")).value = (parseFloat(document.getElementById(
                         "mktg201grade")).value - 0.4)
                 }
             }
 
             //Calculate GPA from different weighted values and round 
             GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
-            GPA = Math.round(GPA, 3); // JAYDEN this is the function he had for us... I dont know what to do with it
+            GPA.toFixed(2); 
 
 
             //if statement to determine fill-color of circle based on grade 
@@ -130,25 +122,6 @@
 
             document.getElementById("OutputGPA").innerHTML = GPA;
         }
-
-        
-        //function to calc GPA.... Again?
-        /*
-        function calcGPA() {
-            var output;
-
-            output = parseInt(document.getElementById("is303/cs142grade")).value + "<br>";
-            output = output + parseInt(document.getElementById("is201grade")).value + "<br>";
-            output = output + parseInt(document.getElementById("acc200grade")).value + "<br>";
-            output = output + parseInt(document.getElementById("fin201grade")).value + "<br>";
-            output = output + parseInt(document.getElementById("mktg201grade")).value + "<br>";
-
-            document.getElementById("check").innerHTML = output;
-
-            if (document.getElementById("retakeis201").checked == true) {
-                alert("You retook is201");
-            }
-        }*/
 
         //clears all values from page
         function clearCircle() {
