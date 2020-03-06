@@ -25,6 +25,7 @@
 
             /*If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
             //Changed grade for IS201
+
             if (document.getElementById("retakeis201").checked == true) {
                 if (document.getElementById("is201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
                     parseInt(document.getElementById("is201grade")).value = (parseInt(document.getElementById("is201grade"))
@@ -165,6 +166,11 @@
             document.getElementById("fin201grade").checked=false;
             document.getElementById("mktg201grade").checked=false;
             document.getElementById("is201grade").focus;
+            document.getElementById("retakemktg201").checked=false;
+            document.getElementById("retakefin201").checked=false;
+            document.getElementById("retakeacc200").checked=false;
+            document.getElementById("retakeis303/cs142").checked=false;
+            document.getElementById("retakeis201").checked=false;
         }
     </script>
 </head>
