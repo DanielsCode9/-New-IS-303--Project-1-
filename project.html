@@ -55,7 +55,7 @@
                 return
             }
 
-
+            //if statement to determine fill-color of circle based on grade 
             if (GPA > 3.7) {
                 document.getElementById("myCircle").style.display = "block";
                 document.getElementById("myCircle").style.fill = "green";
@@ -147,7 +147,6 @@
             }
         }
 
-        
 
         function clearCircle()
         {
@@ -167,10 +166,6 @@
             document.getElementById("mktg201grade").checked=false;
             document.getElementById("is201grade").focus;
         }
-        
-        /*
-                When the page is first displayed (or loaded) or if the user clicks on the RESET button, the IS201 drop down list should have focus.
-                When the user clicks on the RESET button you should call a JavaScript function called clearCircle() and clear the circle (style.display = "none" and style.fill = "none" for the element), clear the output GPA, clear the overall GPA and the last 30 credits GPA, reset all drop downs to empty and the checkboxes to false, and then set focus to the IS202 drop down.*/
     </script>
 </head>
 
@@ -291,7 +286,7 @@
 
     <br> <br>
 
-    <labl for="overallgpa">BYU Overall GPA:</labl>
+    <label for="overallgpa">BYU Overall GPA:</label>
     <input type="text" placeholder="4" id="overallgpa">
     <br> <br>
     <label for="last30gpa">BYU Last 30 Credits GPA:</label>
