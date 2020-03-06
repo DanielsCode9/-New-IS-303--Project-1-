@@ -55,6 +55,12 @@
                 return
             }
 
+            //^^^or could this be more efficient? 
+            if (isNaN(document.getElementById("is201grade").value) || isNaN(document.getElementById("is303/cs142grade").value) || isNaN(document.getElementById("fin201grade").value) || isNaN(ocument.getElementById("mktg201grade").value) || isNaN(parseFloat(document.getElementById("overallgpa").value)) || isNaN(parseFloat(document.getElementById("last30gpa").value))) {
+                alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
+                document.getElementById("is201grade").focus;
+            }
+
             //if statement to determine fill-color of circle based on grade 
             if (GPA > 3.7) {
                 document.getElementById("myCircle").style.display = "block";
@@ -170,7 +176,7 @@
 </head>
 
 <body onload="clearCircle()">
-
+    <!--HTML Info about information systems!-->
     <h1>INFORMATION SYSTEMS</h1>
     <h3>Program Overview:</h3>
     <p> The BS Information Systems program is available as a four-year traditional degree or as a five-year integrated
@@ -188,6 +194,7 @@
         2-tier, 3-tier, and n-tier application development; and web application development.</p>
     <a src="https://marriottschool.byu.edu/infosys/"></a>
 
+    <!--The following labels are for user input of course grades-->
     <label for="is201grade">IS 201</label>
     <select id="is201grade" autofocus>
 
