@@ -245,7 +245,7 @@
 
             //Calculate GPA from different weighted values and round 
             GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
-            GPA.toFixed(2); 
+            GPA = Math.round(GPA,2); 
 
 
             //if statement to determine fill-color of circle based on grade 
