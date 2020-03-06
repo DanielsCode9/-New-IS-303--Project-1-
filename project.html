@@ -23,6 +23,41 @@
             var last30gpa = (parseFloat(document.getElementById("last30gpa").value) * .2);
 
 
+            //Alert if no input for any of the pre-req course grades.
+            
+                            if (isNaN(parseFloat(document.getElementById("is201grade").value) * .2)) {
+                                alert("Please enter your IS 201 Grade.")
+                                return
+                            }
+                            if (isNaN(parseFloat(document.getElementById("is303/cs142grade").value) * .2)) {
+                                alert("Please enter your IS 303 or CS 142 Grade.")
+                                return
+                            }
+                            if (isNaN(parseFloat(document.getElementById("fin201grade").value) * .2)) {
+                                alert("Please enter your Finance 201 Grade.")
+                                return
+                            }
+                            if (isNaN(parseFloat(document.getElementById("mktg201grade").value) * .2)) {
+                                alert("Please enter your Marketing 201 Grade.")
+                                return
+                            }
+                            if (isNaN(parseFloat(document.getElementById("overallgpa").value) * .2)) {
+                                alert("Please enter your Overall GPA")
+                                return
+                            }
+                            if (isNaN(parseFloat(document.getElementById("last30gpa").value) * .2)) {
+                                alert("Please enter your Last 30 credits GPA")
+                                return
+                            }
+
+            //or could this^^ be more efficient? 👇👇
+
+            /* Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box. AUDREY
+            if (isNaN(document.getElementById("is201grade").value) || isNaN(document.getElementById("is303/cs142grade").value) || isNaN(document.getElementById("fin201grade").value) || isNaN(ocument.getElementById("mktg201grade").value) || (null == document.getElementById("overallgpa").value) || (null == document.getElementById("last30gpa").value)) {
+                alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
+                document.getElementById("is201grade").focus;
+            }*/
+
             /*If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
             //Changed grade for IS201
 
@@ -81,40 +116,6 @@
             GPA = Math.round(GPA, 3); // JAYDEN this is the function he had for us... I dont know what to do with it
 
 
-            //Alert if no input for any of the pre-req course grades.
-            
-                            if (isNaN(parseFloat(document.getElementById("is201grade").value) * .2)) {
-                                alert("Please enter your IS 201 Grade.")
-                                return
-                            }
-                            if (isNaN(parseFloat(document.getElementById("is303/cs142grade").value) * .2)) {
-                                alert("Please enter your IS 303 or CS 142 Grade.")
-                                return
-                            }
-                            if (isNaN(parseFloat(document.getElementById("fin201grade").value) * .2)) {
-                                alert("Please enter your Finance 201 Grade.")
-                                return
-                            }
-                            if (isNaN(parseFloat(document.getElementById("mktg201grade").value) * .2)) {
-                                alert("Please enter your Marketing 201 Grade.")
-                                return
-                            }
-                            if (isNaN(parseFloat(document.getElementById("overallgpa").value) * .2)) {
-                                alert("Please enter your Overall GPA")
-                                return
-                            }
-                            if (isNaN(parseFloat(document.getElementById("last30gpa").value) * .2)) {
-                                alert("Please enter your Last 30 credits GPA")
-                                return
-                            }
-
-            //or could this be more efficient? 👇👇
-            /* Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box. AUDREY*/
-            if (isNaN(document.getElementById("is201grade").value) || isNaN(document.getElementById("is303/cs142grade").value) || isNaN(document.getElementById("fin201grade").value) || isNaN(ocument.getElementById("mktg201grade").value) || (null == document.getElementById("overallgpa").value) || (null == document.getElementById("last30gpa").value)) {
-                alert("You must select an item in each drop down and enter a value in the GPA text boxes!");
-                document.getElementById("is201grade").focus;
-            }
-
             //if statement to determine fill-color of circle based on grade 
             if (GPA > 3.7) {
                 document.getElementById("myCircle").style.display = "block";
@@ -149,7 +150,7 @@
             }
         }*/
 
-
+        //clears all values from page
         function clearCircle() {
             document.getElementById("myCircle").style.fill = "none";
             document.getElementById("myCircle").style.display = "none";
