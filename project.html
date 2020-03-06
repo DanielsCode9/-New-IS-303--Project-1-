@@ -9,10 +9,11 @@
 
     <title>Project 1 - Group 9</title>
     <script>
+
         //calcGPA() function is for calculating the percentages and weights of each grade inputed by the user
         function calcGPA() {
             var GPA
-            var is201grade = (parseFloat(document.getElementById("is201grade").value) * .2); //The weights?
+            var is201grade = (parseFloat(document.getElementById("is201grade").value) * .2);
             var is303grade = (parseFloat(document.getElementById("is303/cs142grade").value) * .2);
             var acc200grade = (parseFloat(document.getElementById("acc200grade").value) * (.2 / 3));
             var fin200grade = (parseFloat(document.getElementById("fin201grade").value) * (.2 / 3));
@@ -20,17 +21,15 @@
             var overallgpa = (parseFloat(document.getElementById("overallgpa").value) * .2);
             var last30gpa = (parseFloat(document.getElementById("last30gpa").value) * .2);
 
-            /*Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box. AUDREY*/
-
             /* NOTE: If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. )  JAYDEN */
 
+            //Calculate GPA from different weighted values and round 
             GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
-
-
-            Math.round(GPA, 3); // JAYDEN this is the function he had for us... I dont know what to do with it
+            GPA = Math.round(GPA, 3); // JAYDEN this is the function he had for us... I dont know what to do with it
 
 
             //Alert if no input for any of the pre-req course grades.
+            /* Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box. AUDREY*/
             if (isNaN(parseFloat(document.getElementById("is201grade").value) * .2)) {
                 alert("Please enter your IS 201 Grade.")
                 return
@@ -57,16 +56,6 @@
             }
 
 
-            /*Make sure the user has selected a value for each of the drop down list boxes and that a value (don't worry about numeric vs non-numeric) for the overall and last 30 credit GPAs. If they did not enter everything display an alert that says, "You must select an item in each drop down and enter a value in the GPA text boxes!" and set the focus to the IS 201 drop down list box.*/
-
-            /* NOTE: If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
-
-            GPA = is201grade + is303grade + acc200grade + fin200grade + mktg201grade + overallgpa + last30gpa;
-
-
-            Math.round(GPA, 3); //this is the function he had for us... I dont know what to do with it
-
-
             if (GPA > 3.7) {
                 document.getElementById("myCircle").style.display = "block";
                 document.getElementById("myCircle").style.fill = "green";
@@ -78,11 +67,11 @@
                 document.getElementById("myCircle").style.fill = "red";
             }
 
-            document.getElementById("OutPutGPA").innerHTML = GPA;
+            document.getElementById("OutputGPA").innerHTML = GPA;
         }
 
         function clearCircle() {
-            document.getElementById("myCricle").style.display = "none";
+            document.getElementById("myCircle").style.display = "none";
             document.getElementById("myCircle").style.fill = "none";
             /* AUDREY
             When the page is first displayed (or loaded) or if the user clicks on the RESET button, the IS201 drop down list should have focus.
@@ -164,7 +153,7 @@
         }
 
         function clearCircle() {
-            document.getElementById("myCricle").style.display = "none";
+            document.getElementById("myCircle").style.display = "none";
             document.getElementById("myCircle").style.fill = "none";
         }
         /*
@@ -306,7 +295,7 @@
         <circle id="myCircle" cx="50" cy="50" r="40" stroke="black" stroke-width="3" fill="green" display="none" />
     </svg>
 
-    <p id="OutPutGPA">
+    <p id="OutputGPA">
 
     </p>
 </body>
