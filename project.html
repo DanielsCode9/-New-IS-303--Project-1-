@@ -37,55 +37,44 @@
             /*If the user clicks on the retake check box then lower the point value for the letter grade by one level (ex. A becomes an A-, A- becomes a B+, etc. ) */
             //Changed grade for IS201
             if (document.getElementById("retakeis201").checked == true) {
-                if (document.getElementById("is201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseFloat(document.getElementById("is201grade")).value = (parseFloat(document.getElementById(
-                            "is201grade"))
-                        .value - 0.3)
-                } else if (document.getElementById("is201grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseFloat(document.getElementById("is201grade")).value = (parseFloat(document.getElementById(
-                            "is201grade"))
-                        .value - 0.4)
+                if (is201grade == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
+                    (is201grade = (is201grade - 0.3))
+                } else if (is201grade == (3.4 || 2.4 || 1.4)) {
+                    (is201grade = (is201grade
+                        .value - 0.4))
                 }
             }
             //IS303
             if (document.getElementById("retakeis303/cs142").checked == true) {
-                if (document.getElementById("is303/cs142grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 ||
+                if (is303grade == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 ||
                         .7)) {
-                    parseFloat(document.getElementById("is303/cs142grade")).value = (parseFloat(document.getElementById(
-                        "is303/cs142grade")).value - 0.3)
-                } else if (document.getElementById("is303/cs142grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseFloat(document.getElementById("is303/cs142grade")).value = (parseFloat(document.getElementById(
-                        "is303/cs142grade")).value - 0.4)
+                    (is303grade = (is303grade - 0.3))
+                } else if (is303grade == (3.4 || 2.4 || 1.4)) {
+                    (is303grade = (is303grade - 0.4))
                 }
             }
             //ACC200
             if (document.getElementById("retakeacc200").checked == true) {
-                if (document.getElementById("acc200grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseFloat(document.getElementById("acc200grade")).value = (parseFloat(document.getElementById(
-                        "acc200grade")).value - 0.3)
-                } else if (document.getElementById("acc200grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseFloat(document.getElementById("acc200grade")).value = (parseFloat(document.getElementById(
-                        "acc200grade")).value - 0.4)
+                if (acc200grade == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
+                    (acc200grade = (acc200grade- 0.3))
+                } else if (acc200grade == (3.4 || 2.4 || 1.4)) {
+                    (acc200grade = (acc200grade - 0.4))
                 }
             }
             //FIN201
             if (document.getElementById("retakefin201").checked == true) {
-                if (document.getElementById("fin201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseFloat(document.getElementById("fin201grade")).value = (parseFloat(document.getElementById(
-                        "fin201grade")).value - 0.3)
-                } else if (document.getElementById("fin201grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseFloat(document.getElementById("fin201grade")).value = (parseFloat(document.getElementById(
-                        "fin201grade")).value - 0.4)
+                if (fin200grade == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
+                    (fin200grade = (fin200grade - 0.3))
+                } else if (fin200grade == (3.4 || 2.4 || 1.4)) {
+                    (fin200grade = (fin200grade - 0.4))
                 }
             }
             //MKTG201
             if (document.getElementById("retakemktg201").checked == true) {
-                if (document.getElementById("mktg201grade").value == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    parseFloat(document.getElementById("mktg201grade")).value = (parseFloat(document.getElementById(
-                        "mktg201grade")).value - 0.3)
-                } else if (document.getElementById("mktg201grade").value == (3.4 || 2.4 || 1.4)) {
-                    parseFloat(document.getElementById("mktg201grade")).value = (parseFloat(document.getElementById(
-                        "mktg201grade")).value - 0.4)
+                if (mktg201grade == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
+                    (mktg201grade= (mktg201grade - 0.3))
+                } else if (mktg201grade == (3.4 || 2.4 || 1.4)) {
+                    (mktg201grade = (mktg201grade- 0.4))
                 }
             }
 
@@ -119,7 +108,7 @@
             document.getElementById("myCircle").style.fill = "none";
             document.getElementById("myCircle").style.display = "none";
             document.getElementById("is201grade").value = "";
-            document.getElementById("is303/cs142grade").value = "";
+            document.getElementById("is303/cs142grade").value="";
             document.getElementById("acc200grade").value = "";
             document.getElementById("fin201grade").value = "";
             document.getElementById("mktg201grade").value = "";
@@ -131,7 +120,7 @@
             document.getElementById("retakeacc200").checked = false;
             document.getElementById("retakeis303/cs142").checked = false;
             document.getElementById("retakeis201").checked = false;
-            document.getElementById("OutputGPA").vlaue = "";
+            document.getElementById("OutputGPA").innerHTML = "";
         }
     </script>
 
