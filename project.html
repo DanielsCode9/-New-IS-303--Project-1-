@@ -56,7 +56,7 @@
             //ACC200
             if (document.getElementById("retakeacc200").checked == true) {
                 if (acc200grade == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    (acc200grade = (acc200grade- 0.3))
+                    (acc200grade = (acc200grade - 0.3))
                 } else if (acc200grade == (3.4 || 2.4 || 1.4)) {
                     (acc200grade = (acc200grade - 0.4))
                 }
@@ -72,9 +72,9 @@
             //MKTG201
             if (document.getElementById("retakemktg201").checked == true) {
                 if (mktg201grade == (4.0 || 3.7 || 3 || 2.7 || 2 || 1.7 || 1 || .7)) {
-                    (mktg201grade= (mktg201grade - 0.3))
+                    (mktg201grade = (mktg201grade - 0.3))
                 } else if (mktg201grade == (3.4 || 2.4 || 1.4)) {
-                    (mktg201grade = (mktg201grade- 0.4))
+                    (mktg201grade = (mktg201grade - 0.4))
                 }
             }
 
@@ -85,7 +85,7 @@
                 return Number(Math.round(value + 'e' + decimals) + 'e-' + decimals);
             }
 
-            GPA = round(GPA,2);
+            GPA = round(GPA, 2);
 
 
             //if statement to determine fill-color of circle based on grade 
@@ -108,7 +108,7 @@
             document.getElementById("myCircle").style.fill = "none";
             document.getElementById("myCircle").style.display = "none";
             document.getElementById("is201grade").value = "";
-            document.getElementById("is303/cs142grade").value="";
+            document.getElementById("is303/cs142grade").value = "";
             document.getElementById("acc200grade").value = "";
             document.getElementById("fin201grade").value = "";
             document.getElementById("mktg201grade").value = "";
@@ -162,7 +162,7 @@
         <option value=".7">D-</option>
         <option value="0">E</option>
     </select>
-    <input type="radio" id="retakeis201" value="is" />Retake
+    <input type="radio" id="retakeis201" value="is"  />Retake
 
     <br> <br>
 
